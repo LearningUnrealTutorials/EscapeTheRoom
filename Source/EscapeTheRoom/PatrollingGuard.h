@@ -14,4 +14,7 @@ class ESCAPETHEROOM_API APatrollingGuard : public ATP_ThirdPersonCharacter
 {
 	GENERATED_BODY()
 	
+public: 
+	UPROPERTY(EditInstanceOnly, Category = "Patrol Route") 
+	TArray<AActor*> PatrolPoints; //TODO Create get function
 };
