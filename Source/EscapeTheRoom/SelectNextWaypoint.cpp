@@ -4,7 +4,6 @@
 #include "SelectNextWaypoint.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "AIController.h"
-#include "PatrollingGuard.h" //Dump this class
 #include "PatrolRouteLogic.h"
 #include "Array.h"
 

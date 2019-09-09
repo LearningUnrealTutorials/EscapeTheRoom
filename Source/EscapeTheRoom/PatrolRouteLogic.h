@@ -10,19 +10,14 @@
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ESCAPETHEROOM_API UPatrolRouteLogic : public UActorComponent
 {
-	GENERATED_BODY()
+	GENERATED_BODY()	
 
-public:	
-	// Sets default values for this component's properties
-	UPatrolRouteLogic();
-
-protected:
-	// Called when the game starts
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-		
+public:
+	TArray<AActor*> GetPatrolPoints() const
+	{
+		return PatrolPoints;
+	}
+private:
+	UPROPERTY(EditInstanceOnly, Category = "Patrol Route")
+	TArray<AActor*> PatrolPoints;
 };
