@@ -11,6 +11,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
+#include "Perception/AISense_Hearing.h" // for gun noise report
 
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
@@ -172,6 +173,7 @@ void AEscapeTheRoomCharacter::OnFire()
 	if (FireSound != NULL)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
+		UAISense_Hearing::ReportNoiseEvent(this, GetActorLocation(), 1.0f, this, 3000, "Gun Fire");
 	}
 
 	// try and play a firing animation if specified
